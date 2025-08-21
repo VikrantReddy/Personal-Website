@@ -36,6 +36,15 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Debug build output
+        run: |
+          echo "=== Build Output ==="
+          ls -la dist/
+          echo "=== Assets ==="
+          ls -la dist/assets/
+          echo "=== HTML Content ==="
+          head -20 dist/index.html
+
       - name: Add SPA fallback
         run: cp dist/index.html dist/404.html
 
