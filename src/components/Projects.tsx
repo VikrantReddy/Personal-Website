@@ -82,7 +82,7 @@ export const Projects = () => {
                       size="sm" 
                       variant="ghost"
                       className="opacity-0 group-hover:opacity-100 transition-opacity"
-                      onClick={() => window.open(project.demo, '_blank')}
+                      onClick={() => project.demo !== '#' && window.open(project.demo, '_blank', 'noopener,noreferrer')}
                     >
                       <ExternalLink className="w-4 h-4" />
                     </Button>
