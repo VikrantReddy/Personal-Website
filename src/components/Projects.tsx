@@ -42,7 +42,7 @@ export const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-6 text-elegant">
             <span className="gradient-professional">
-              Project Showcase
+              Work Highlights
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

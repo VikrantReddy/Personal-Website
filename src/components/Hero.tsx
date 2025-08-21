@@ -50,7 +50,7 @@ export const Hero = () => {
           <div className="mb-8">
             <h1 className="text-7xl md:text-9xl font-bold mb-4 text-elegant">
               <span className="text-primary">
-                DEV<span className="text-accent text-accent-glow">.</span>
+                Vikrant Reddy<span className="text-accent text-accent-glow">.</span>
               </span>
             </h1>
           </div>

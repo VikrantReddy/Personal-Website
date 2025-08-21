@@ -1,17 +1,17 @@
 import { Card, CardContent } from '@/components/ui/card';
 
 const skills = [
-  { name: 'Node.js', category: 'Backend', level: 95 },
-  { name: 'Python', category: 'Backend', level: 90 },
-  { name: 'PostgreSQL', category: 'Database', level: 88 },
+  { name: 'Python', category: 'Backend', level: 95 },
+  { name: 'AI for Development', category: 'Misc', level: 88 },
+  { name: 'Node.js', category: 'Backend', level: 85 },
   { name: 'Docker', category: 'DevOps', level: 85 },
-  { name: 'AWS', category: 'Cloud', level: 82 },
+  { name: 'Google Cloud', category: 'Cloud', level: 82 },
   { name: 'Redis', category: 'Cache', level: 80 },
-  { name: 'GraphQL', category: 'API', level: 78 },
   { name: 'Kubernetes', category: 'DevOps', level: 75 },
+  { name: 'React', category: 'Frontend', level: 75 },
 ];
 
-const categories = ['Backend', 'Database', 'DevOps', 'Cloud', 'Cache', 'API'];
+const categories = ['Backend', 'Database', 'DevOps', 'Cloud', 'AI', 'API'];
 
 export const Skills = () => {
   return (
