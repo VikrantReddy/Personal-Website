@@ -74,7 +74,7 @@ export const Projects = () => {
                       size="sm" 
                       variant="ghost" 
                       className="opacity-0 group-hover:opacity-100 transition-opacity"
-                      onClick={() => window.open(project.github, '_blank')}
+                      onClick={() => project.github !== '#' && window.open(project.github, '_blank', 'noopener,noreferrer')}
                     >
                       <Github className="w-4 h-4" />
                     </Button>
