@@ -24,15 +24,20 @@ export const Contact = () => {
     try {
       setIsSubmitting(true);
 
-      const googleFormAction =
-        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeJF-zN_DWRwZOvxsQsWFfUFnhkWmUDr4xvGgU_AD9f7wGeng/formResponse";
-
-      // Map local fields to Google Form entry IDs
-      const payload = new URLSearchParams();
-      payload.append("entry.1644489320", formData.name);           // name
-      payload.append("entry.2070026609", formData.email);          // email
-      payload.append("entry.1112631221", formData.project);        // project_type
-      payload.append("entry.1052041419", formData.message);        // project_details
+      const googleFormAction = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeJF-zN_DWRwZOvxsQsWFfUFnhkWmUDr4xvGgU_AD9f7wGeng/formResponse";
+      const googleFormEntries = {
+        name: "entry.1644489320",
+        email: "entry.2070026609",
+        project: "entry.1112631221",
+        message: "entry.1052041419",
+      };
+  
+        // Map local fields to Google Form entry IDs
+        const payload = new URLSearchParams();
+        payload.append(googleFormEntries.name, formData.name);
+        payload.append(googleFormEntries.email, formData.email);
+        payload.append(googleFormEntries.project, formData.project);
+        payload.append(googleFormEntries.message, formData.message);
 
       await fetch(googleFormAction, {
         method: "POST",
@@ -57,9 +62,9 @@ export const Contact = () => {
         title: "Something went wrong",
         description: "Please try again in a moment or email me directly.",
       });
+      setTimeout(() => setIsSubmitted(false), 5000);
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setIsSubmitted(false), 5000);
     }
   };
 
