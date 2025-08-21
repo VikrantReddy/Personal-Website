@@ -131,7 +131,7 @@ export const Projects = () => {
             size="lg" 
             variant="outline" 
             className="btn-professional"
-            onClick={() => window.open('https://medium.com', '_blank')}
+            onClick={() => window.open('https://medium.com', '_blank', 'noopener,noreferrer')}
           >
             View All Design Docs on Medium
           </Button>
