@@ -4,14 +4,14 @@ import { ExternalLink, Github, Server, Database, Zap } from 'lucide-react';
 
 const projects = [
   {
-    title: 'HyperScale API Gateway',
-    description: 'High-performance microservices gateway handling 100M+ requests/day with sub-10ms latency',
-    tech: ['Node.js', 'Redis', 'Docker', 'AWS Lambda'],
-    metrics: ['100M+ requests/day', '99.99% uptime', '<10ms latency'],
+    title: 'Automated Lead Generation Pipeline',
+    description: 'High-scaling modular pipeline handling outreach to 100M+ leads with minimal manual efforts',
+    tech: ['Python', 'Redis', 'Tesseract', 'AWS'],
+    metrics: ['1M+ requests/day', '99.99% uptime', '<10ms latency'],
     icon: <Server className="w-6 h-6" />,
     color: 'steel-blue',
     github: '#',
-    demo: '#'
+    demo: 'https://medium.com/@gravity47/building-a-robust-lead-generation-pipeline-with-ocr-automation-and-mongodb-de4088c00f2e'
   },
   {
     title: 'Real-time Analytics Engine',
@@ -74,6 +74,7 @@ export const Projects = () => {
                       size="sm" 
                       variant="ghost" 
                       className="opacity-0 group-hover:opacity-100 transition-opacity"
+                      onClick={() => window.open(project.github, '_blank')}
                     >
                       <Github className="w-4 h-4" />
                     </Button>
@@ -81,6 +82,7 @@ export const Projects = () => {
                       size="sm" 
                       variant="ghost"
                       className="opacity-0 group-hover:opacity-100 transition-opacity"
+                      onClick={() => window.open(project.demo, '_blank')}
                     >
                       <ExternalLink className="w-4 h-4" />
                     </Button>
@@ -125,8 +127,13 @@ export const Projects = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button size="lg" variant="outline" className="btn-professional">
-            View All Projects on GitHub
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="btn-professional"
+            onClick={() => window.open('https://medium.com', '_blank')}
+          >
+            View All Design Docs on Medium
           </Button>
         </div>
       </div>
