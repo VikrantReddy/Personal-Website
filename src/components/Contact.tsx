@@ -14,18 +14,58 @@ export const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    toast({
-      title: "Message Sent!",
-      description: "I'll get back to you within 24 hours.",
-    });
-    
-    setTimeout(() => setIsSubmitted(false), 5000);
+    if (isSubmitting) return;
+
+    try {
+      setIsSubmitting(true);
+
+      const googleFormAction = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeJF-zN_DWRwZOvxsQsWFfUFnhkWmUDr4xvGgU_AD9f7wGeng/formResponse";
+      const googleFormEntries = {
+        name: "entry.1644489320",
+        email: "entry.2070026609",
+        project: "entry.1112631221",
+        message: "entry.1052041419",
+      };
+  
+        // Map local fields to Google Form entry IDs
+        const payload = new URLSearchParams();
+        payload.append(googleFormEntries.name, formData.name);
+        payload.append(googleFormEntries.email, formData.email);
+        payload.append(googleFormEntries.project, formData.project);
+        payload.append(googleFormEntries.message, formData.message);
+
+      await fetch(googleFormAction, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        body: payload.toString(),
+      });
+
+      setIsSubmitted(true);
+      toast({
+        title: "Message Sent!",
+        description: "I'll get back to you within 24 hours.",
+      });
+
+      // Optional: reset fields after submit
+      setFormData({ name: '', email: '', project: '', message: '' });
+    } catch (error) {
+      console.error("Google Form submission failed", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again in a moment or email me directly.",
+      });
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -171,8 +211,8 @@ export const Contact = () => {
                     />
                   </div>
                   
-                  <Button type="submit" className="w-full btn-professional text-lg py-3">
-                    Send Message
+                  <Button type="submit" disabled={isSubmitting} className="w-full btn-professional text-lg py-3">
+                    {isSubmitting ? 'Sending…' : 'Send Message'}
                   </Button>
                 </form>
               ) : (
