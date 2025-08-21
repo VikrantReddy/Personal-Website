@@ -15,11 +15,11 @@ const categories = ['Backend', 'Database', 'DevOps', 'Cloud', 'Cache', 'API'];
 
 export const Skills = () => {
   return (
-    <section id="skills" className="py-24 matrix-bg">
+    <section id="skills" className="py-24 mysterious-bg">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 text-glow">
-            <span className="bg-gradient-electric bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-6 text-elegant">
+            <span className="gradient-professional">
               Technical Arsenal
             </span>
           </h2>
@@ -32,7 +32,7 @@ export const Skills = () => {
           {skills.map((skill, index) => (
             <Card 
               key={skill.name} 
-              className="skill-badge group"
+              className="skill-badge-professional group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-6 text-center">
@@ -40,7 +40,7 @@ export const Skills = () => {
                 <div className="text-sm text-accent mb-4">{skill.category}</div>
                 <div className="w-full bg-muted rounded-full h-2 mb-2">
                   <div 
-                    className="h-2 rounded-full bg-gradient-cyber transition-all duration-1000 group-hover:animate-pulse"
+                    className="h-2 rounded-full bg-gradient-steel transition-all duration-1000 group-hover:shadow-glow-steel"
                     style={{ width: `${skill.level}%` }}
                   />
                 </div>
@@ -51,13 +51,13 @@ export const Skills = () => {
         </div>
 
         <div className="text-center">
-          <h3 className="text-2xl font-bold mb-8 text-primary">Core Specializations</h3>
+          <h3 className="text-2xl font-bold mb-8 text-accent">Core Specializations</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category, index) => (
               <div
                 key={category}
-                className="px-6 py-3 border border-primary/30 rounded-lg bg-card/50 backdrop-blur-sm
-                         hover:border-primary hover:shadow-glow-cyan transition-all duration-300
+                className="px-6 py-3 border border-border rounded-lg bg-card/50 backdrop-blur-sm
+                         hover:border-accent/50 hover:shadow-glow-subtle transition-all duration-300
                          text-foreground font-medium"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >

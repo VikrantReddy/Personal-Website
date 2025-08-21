@@ -9,7 +9,7 @@ const projects = [
     tech: ['Node.js', 'Redis', 'Docker', 'AWS Lambda'],
     metrics: ['100M+ requests/day', '99.99% uptime', '<10ms latency'],
     icon: <Server className="w-6 h-6" />,
-    color: 'neon-cyan',
+    color: 'steel-blue',
     github: '#',
     demo: '#'
   },
@@ -19,7 +19,7 @@ const projects = [
     tech: ['Python', 'Apache Kafka', 'PostgreSQL', 'Kubernetes'],
     metrics: ['5TB+ data/hour', '1M+ events/sec', '50+ ML models'],
     icon: <Database className="w-6 h-6" />,
-    color: 'neon-purple',
+    color: 'deep-blue',
     github: '#',
     demo: '#'
   },
@@ -29,7 +29,7 @@ const projects = [
     tech: ['Go', 'Terraform', 'Prometheus', 'AWS ECS'],
     metrics: ['60% cost reduction', '40% faster deploys', '99.9% reliability'],
     icon: <Zap className="w-6 h-6" />,
-    color: 'neon-green',
+    color: 'slate',
     github: '#',
     demo: '#'
   }
@@ -40,8 +40,8 @@ export const Projects = () => {
     <section id="projects" className="py-24 bg-card/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 text-glow">
-            <span className="bg-gradient-matrix bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-6 text-elegant">
+            <span className="gradient-professional">
               Project Showcase
             </span>
           </h2>
@@ -55,8 +55,8 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title}
-              className="group hover:shadow-cyber transition-all duration-500 bg-card/80 backdrop-blur-sm
-                        border-border hover:border-primary/50 overflow-hidden relative"
+              className="group hover:shadow-deep transition-all duration-500 bg-card/80 backdrop-blur-sm
+                        border-border hover:border-accent/30 overflow-hidden relative"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div 
@@ -125,7 +125,7 @@ export const Projects = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button size="lg" variant="outline" className="btn-cyber">
+          <Button size="lg" variant="outline" className="btn-professional">
             View All Projects on GitHub
           </Button>
         </div>

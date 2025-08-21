@@ -36,11 +36,11 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 matrix-bg">
+    <section id="contact" className="py-24 mysterious-bg">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 text-glow">
-            <span className="bg-gradient-cyber bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-6 text-elegant">
+            <span className="gradient-professional">
               Let's Build Something
             </span>
           </h2>
@@ -171,7 +171,7 @@ export const Contact = () => {
                     />
                   </div>
                   
-                  <Button type="submit" className="w-full btn-cyber text-lg py-3">
+                  <Button type="submit" className="w-full btn-professional text-lg py-3">
                     Send Message
                   </Button>
                 </form>
