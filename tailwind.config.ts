@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					container: '#dae2fd'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -66,7 +67,19 @@ export default {
 				'charcoal': 'hsl(var(--charcoal))',
 				'silver': 'hsl(var(--silver))',
 				'deep-blue': 'hsl(var(--deep-blue))',
-				'slate': 'hsl(var(--slate))'
+				'slate': 'hsl(var(--slate))',
+				surface: '#f8f9fb',
+				'surface-container-low': '#f3f4f6',
+				'surface-container-lowest': '#ffffff',
+				'surface-container-high': '#e7e8ea',
+				'surface-container-highest': '#e1e2e4',
+				'surface-variant': '#dfe3e4',
+				'on-surface': '#191c1e',
+				'on-surface-variant': '#414753',
+				'on-primary': '#ffffff',
+				'on-primary-container': '#fcfbff',
+				tertiary: '#5b5b5b',
+				'outline-variant': '#c1c6d6'
 			},
 			backgroundImage: {
 				'gradient-steel': 'var(--gradient-steel)',
