@@ -1,5 +1,5 @@
 import { ChatMessage } from '@/types/portfolio';
-import { SmartToy } from 'lucide-react';
+import { Bot } from 'lucide-react';
 
 interface MessageBubbleProps {
   message: ChatMessage;
@@ -19,7 +19,7 @@ export function MessageBubble({ message }: MessageBubbleProps) {
       {isAgent && (
         <div className="flex items-center gap-2 mb-1">
           <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
-            <SmartToy className="w-4 h-4" />
+            <Bot className="w-4 h-4" />
           </div>
           <span className="text-xs font-bold uppercase tracking-widest text-tertiary">
             The Curator
