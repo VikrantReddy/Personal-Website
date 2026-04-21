@@ -28,45 +28,49 @@ export function ChatInterface() {
   return (
     <div className="flex flex-col h-screen bg-surface">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 border-b border-outline-variant">
-        <div className="flex items-center gap-4">
-          <span className="text-lg font-bold tracking-tight text-slate-800 dark:text-slate-200">
-            Portfolio OS
+      <header className="sticky top-0 z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl flex justify-between items-center px-6 lg:px-0 py-6 border-b border-outline-variant/20">
+        <div className="max-w-2xl w-full mx-auto flex items-center gap-4 lg:px-6">
+          <span className="text-2xl md:text-3xl font-headline font-black tracking-tighter text-on-surface">
+            CURATOR
           </span>
         </div>
       </header>
 
       {/* Chat Canvas */}
-      <main className="flex-1 overflow-y-auto px-4 md:px-12 py-8 space-y-4 custom-scrollbar">
-        {messages.map((message) => (
-          <div key={message.id}>
-            <MessageBubble message={message} />
-            {message.contentType !== 'text' && (
-              <div className="ml-10 mb-6">
-                <RichContent
-                  message={message}
-                  onPromptClick={handlePromptClick}
-                />
-              </div>
-            )}
-          </div>
-        ))}
+      <main className="flex-1 overflow-y-auto px-6 lg:px-0 py-8 space-y-3 custom-scrollbar pb-64">
+        <div className="max-w-2xl mx-auto w-full lg:px-6">
+          {messages.map((message) => (
+            <div key={message.id}>
+              <MessageBubble message={message} />
+              {message.contentType !== 'text' && (
+                <div className="ml-10 mb-6">
+                  <RichContent
+                    message={message}
+                    onPromptClick={handlePromptClick}
+                  />
+                </div>
+              )}
+            </div>
+          ))}
 
-        {showInitialPrompts && (
-          <div className="mt-8">
-            <SuggestedPrompts
-              prompts={INITIAL_PROMPTS}
-              onPromptClick={handlePromptClick}
-            />
-          </div>
-        )}
+          {showInitialPrompts && (
+            <div className="mt-8 mb-4">
+              <SuggestedPrompts
+                prompts={INITIAL_PROMPTS}
+                onPromptClick={handlePromptClick}
+              />
+            </div>
+          )}
 
-        <div ref={messagesEndRef} />
+          <div ref={messagesEndRef} />
+        </div>
       </main>
 
       {/* Input Area */}
-      <footer className="sticky bottom-0 bg-surface border-t border-outline-variant px-4 md:px-12 py-4">
-        <ChatInput onSend={sendMessage} disabled={loading} />
+      <footer className="fixed bottom-0 left-0 right-0 z-40 px-6 lg:px-0 pb-6 md:pb-8 pointer-events-none">
+        <div className="max-w-2xl mx-auto pointer-events-auto lg:px-6">
+          <ChatInput onSend={sendMessage} disabled={loading} />
+        </div>
       </footer>
     </div>
   );

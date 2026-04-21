@@ -19,23 +19,30 @@ export default {
 		},
 		extend: {
 			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
+				border: '#757c7d',
+				input: '#f2f4f4',
+				ring: '#2d3435',
+				background: '#f9f9f9',
+				foreground: '#2d3435',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))',
-					container: '#dae2fd'
+					DEFAULT: '#5f5e5e',
+					foreground: '#faf7f6',
+					container: '#e5e2e1',
+					'fixed': '#e5e2e1',
+					'fixed-dim': '#d6d4d3',
+					'dim': '#535252'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#5f5f5f',
+					foreground: '#faf8f8',
+					container: '#e4e2e2',
+					'fixed': '#e4e2e2',
+					'fixed-dim': '#d5d4d4',
+					'dim': '#535353'
 				},
 				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
+					DEFAULT: '#9f403d',
+					foreground: '#fff7f6'
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
@@ -46,40 +53,68 @@ export default {
 					foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
+					DEFAULT: '#ffffff',
+					foreground: '#2d3435'
 				},
 				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					DEFAULT: '#ffffff',
+					foreground: '#2d3435'
 				},
 				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+					DEFAULT: '#f9f9f9',
+					foreground: '#2d3435',
+					primary: '#5f5e5e',
+					'primary-foreground': '#faf7f6',
+					accent: '#5f5e5e',
+					'accent-foreground': '#faf7f6',
+					border: '#dde4e5',
+					ring: '#5f5e5e'
 				},
+				surface: '#f9f9f9',
+				'surface-bright': '#f9f9f9',
+				'surface-container-low': '#f2f4f4',
+				'surface-container-lowest': '#ffffff',
+				'surface-container': '#ebeeef',
+				'surface-container-high': '#e4e9ea',
+				'surface-container-highest': '#dde4e5',
+				'surface-dim': '#d4dbdd',
+				'surface-variant': '#dde4e5',
+				'surface-tint': '#5f5e5e',
+				'on-surface': '#2d3435',
+				'on-surface-variant': '#5a6061',
+				'on-background': '#2d3435',
+				'on-primary': '#faf7f6',
+				'on-primary-fixed': '#403f3f',
+				'on-primary-fixed-variant': '#5c5b5b',
+				'on-primary-container': '#525151',
+				'on-secondary': '#faf8f8',
+				'on-secondary-fixed': '#3f3f3f',
+				'on-secondary-fixed-variant': '#5b5b5b',
+				'on-secondary-container': '#515252',
+				tertiary: '#5e5f5f',
+				'tertiary-container': '#f4f3f3',
+				'tertiary-fixed': '#f4f3f3',
+				'tertiary-fixed-dim': '#e5e5e5',
+				'tertiary-dim': '#525354',
+				'on-tertiary': '#f9f9f9',
+				'on-tertiary-fixed': '#484a4a',
+				'on-tertiary-fixed-variant': '#656667',
+				'on-tertiary-container': '#5a5c5c',
+				'outline': '#757c7d',
+				'outline-variant': '#adb3b4',
+				error: '#9f403d',
+				'error-container': '#fe8983',
+				'error-dim': '#4e0309',
+				'on-error': '#fff7f6',
+				'on-error-container': '#752121',
+				'inverse-surface': '#0c0f0f',
+				'inverse-on-surface': '#9c9d9d',
+				'inverse-primary': '#ffffff',
 				'steel-blue': 'hsl(var(--steel-blue))',
 				'charcoal': 'hsl(var(--charcoal))',
 				'silver': 'hsl(var(--silver))',
 				'deep-blue': 'hsl(var(--deep-blue))',
-				'slate': 'hsl(var(--slate))',
-				surface: '#f8f9fb',
-				'surface-container-low': '#f3f4f6',
-				'surface-container-lowest': '#ffffff',
-				'surface-container-high': '#e7e8ea',
-				'surface-container-highest': '#e1e2e4',
-				'surface-variant': '#dfe3e4',
-				'on-surface': '#191c1e',
-				'on-surface-variant': '#414753',
-				'on-primary': '#ffffff',
-				'on-primary-container': '#fcfbff',
-				tertiary: '#5b5b5b',
-				'outline-variant': '#c1c6d6'
+				'slate': 'hsl(var(--slate))'
 			},
 			backgroundImage: {
 				'gradient-steel': 'var(--gradient-steel)',
