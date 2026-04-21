@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio OS | The Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800&amp;family=Manrope:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#9c9d9d",
+                        "surface-dim": "#d7dbdb",
+                        "on-surface": "#2f3334",
+                        "on-surface-variant": "#5b6061",
+                        "secondary-container": "#d3e4fe",
+                        "primary-fixed-dim": "#ccd4ee",
+                        "on-tertiary-container": "#5b6063",
+                        "outline": "#777b7c",
+                        "inverse-primary": "#dae2fd",
+                        "tertiary": "#5b6063",
+                        "secondary-fixed": "#d3e4fe",
+                        "surface-container-highest": "#dfe3e4",
+                        "error-container": "#fa746f",
+                        "tertiary-fixed-dim": "#e7ebef",
+                        "surface-bright": "#f9f9f9",
+                        "surface-tint": "#575f75",
+                        "surface": "#f9f9f9",
+                        "primary-fixed": "#dae2fd",
+                        "on-background": "#2f3334",
+                        "tertiary-container": "#f6fafe",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "tertiary-fixed": "#f6fafe",
+                        "surface-container-low": "#f2f4f4",
+                        "error-dim": "#67040d",
+                        "error": "#a83836",
+                        "surface-container-high": "#e6e9e9",
+                        "on-secondary-fixed": "#314055",
+                        "secondary": "#506076",
+                        "primary": "#575f75",
+                        "outline-variant": "#aeb3b3",
+                        "on-secondary": "#f7f9ff",
+                        "surface-container": "#eceeef",
+                        "on-tertiary-fixed": "#494e51",
+                        "on-tertiary-fixed-variant": "#656a6e",
+                        "on-error-container": "#6e0a12",
+                        "on-primary-container": "#4a5167",
+                        "surface-variant": "#dfe3e4",
+                        "on-primary-fixed": "#373f54",
+                        "tertiary-dim": "#4f5457",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#535b71",
+                        "background": "#f9f9f9",
+                        "secondary-dim": "#44546a",
+                        "on-tertiary": "#f5f9fd",
+                        "on-primary": "#f9f8ff",
+                        "on-error": "#fff7f6",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "inverse-surface": "#0c0f0f",
+                        "on-secondary-container": "#435368",
+                        "primary-dim": "#4b5369",
+                        "primary-container": "#dae2fd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .message-agent { max-width: 85%; }
+        .message-user { max-width: 75%; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dfe3e4; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl docked full-width top-0 sticky z-50 flex justify-between items-center px-6 py-4 w-full max-w-full">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold tracking-tight text-slate-800 dark:text-slate-200 font-headline">Portfolio OS</span>
+<nav class="hidden md:flex gap-6 ml-8">
+<a class="text-slate-900 dark:text-slate-100 font-bold text-sm font-label transition-all active:scale-95 duration-150" href="#projects">Projects</a>
+<a class="text-slate-500 dark:text-slate-500 text-sm font-label hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors px-2 py-1 rounded" href="#bio">Bio</a>
+<a class="text-slate-500 dark:text-slate-500 text-sm font-label hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors px-2 py-1 rounded" href="#contact">Contact</a>
+</nav>
+</div>
+<div class="flex gap-4 items-center text-slate-600 dark:text-slate-400">
+<button class="hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors p-2 rounded active:scale-95 duration-150">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+<button class="hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors p-2 rounded active:scale-95 duration-150">
+<span class="material-symbols-outlined">info</span>
+</button>
+<button class="hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors p-2 rounded active:scale-95 duration-150">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-1 overflow-y-auto px-4 md:px-12 py-12 space-y-12 custom-scrollbar pb-64">
+<!-- System Greeting -->
+<section class="flex flex-col items-start message-agent space-y-2">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<span class="font-label text-xs font-bold uppercase tracking-widest text-tertiary">The Curator</span>
+<span class="text-tertiary text-[10px] font-label">JUST NOW</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl rounded-tl-none">
+<h1 class="font-headline text-2xl font-bold mb-4 text-on-surface">Welcome to the Portfolio OS.</h1>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                    I am your Curator. This space is a living archive of work, thoughts, and technical logic. Instead of browsing a static grid, tell me what you're looking for, or choose a prompt below to begin the exploration.
+                </p>
+</div>
+</section>
+<!-- Simulated History: User Query 1 -->
+<section class="flex flex-col items-end message-user space-y-2 self-end">
+<div class="bg-primary-container p-4 rounded-xl rounded-tr-none">
+<p class="font-body text-on-primary-container">Show me your latest projects.</p>
+</div>
+<span class="text-tertiary text-[10px] font-label">2 MIN AGO</span>
+</section>
+<!-- Simulated History: Agent Response 1 (Rich Media Projects) -->
+<section class="flex flex-col items-start message-agent space-y-4 w-full" id="projects">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<span class="font-label text-xs font-bold uppercase tracking-widest text-tertiary">The Curator</span>
+<span class="text-tertiary text-[10px] font-label">1 MIN AGO</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl rounded-tl-none w-full max-w-4xl">
+<p class="font-body text-on-surface-variant mb-8">Accessing the repository... I've retrieved two high-impact projects that define our current trajectory in design systems and spatial interfaces.</p>
+<!-- Asymmetric Bento Grid for Projects -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+<!-- Project Card 1 -->
+<div class="md:col-span-3 bg-surface-container-highest rounded-xl overflow-hidden group cursor-pointer">
+<div class="aspect-video w-full relative">
+<img alt="Project Alpha" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Abstract 3D digital art with smooth gradients of blue and purple flowing together in a dark void, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIHwmQkpXQx3hJnc4A2qUAnql05aFSamaMzrDmpkcu1RbaAObiYrnRTQPQI4l9OwzPgtScluPS8UQEyzgGcOFnIPPleyz9SX2W8a0GiusSIkA_Grbkz1HvTv1_jq2Nhe1juUM1FWaZs6xCJ514WXrKqFubnVpKt1gmypw6ma4dX-qPzXLQU2U-GAPjpDP9Kokv-e9HgF_yzmkaCx8FIWnzJXSMq7G0wW45b2J5IQIlmbSTYSGdUV7aaBHJabBaRwI5RNp8uXfD"/>
+</div>
+<div class="p-8">
+<span class="font-label text-[10px] uppercase font-bold tracking-[0.2em] text-tertiary">Product Architecture</span>
+<h3 class="font-headline text-2xl font-bold mt-2 mb-4">Lumina OS Interface</h3>
+<p class="font-body text-on-surface-variant line-clamp-2">A conceptual spatial operating system built on glassmorphism principles and tonal layering architecture.</p>
+<div class="mt-6 flex gap-2">
+<span class="bg-surface p-2 px-3 rounded-full text-xs font-label text-on-surface-variant">Three.js</span>
+<span class="bg-surface p-2 px-3 rounded-full text-xs font-label text-on-surface-variant">React</span>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="md:col-span-2 bg-surface-container-highest rounded-xl overflow-hidden group cursor-pointer flex flex-col">
+<div class="flex-1 w-full relative">
+<img alt="Project Beta" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist architectural detail of a concrete spiral staircase with sharp shadows and bright sunlight from above" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC90iib0S8vLvHQuJZTh5JDxULuTKhXsfOw1vPtat1kz-FzOd_pB_85TG6i2UO6P9rf9Z5mHC0FnTZz2pWTd0rsonkMO_JkmcijAOLWlUhyeNJ8dKjSFKUnuCAYMnxqAYHn2knJi1HBYfqzG4dxfsquPPwPtcPJNjF1CUpaH6X6yRXxNRWsMcgFOe9uDgkl0OPUOeH061CakT78pzhV5u0VYkf8R9sw4oBgMcQoY2u-dsl0iwQFylZQ-IJLYOgfb33MZpFXKWn"/>
+</div>
+<div class="p-8">
+<span class="font-label text-[10px] uppercase font-bold tracking-[0.2em] text-tertiary">Editorial Design</span>
+<h3 class="font-headline text-xl font-bold mt-2 mb-3">Concrete Muse</h3>
+<p class="font-body text-sm text-on-surface-variant line-clamp-3">Digital editorial experience exploring the intersection of brutalist architecture and responsive typography.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Simulated History: User Query 2 -->
+<section class="flex flex-col items-end message-user space-y-2 self-end">
+<div class="bg-primary-container p-4 rounded-xl rounded-tr-none">
+<p class="font-body text-on-primary-container">Tell me about yourself. Who is the person behind the Curator?</p>
+</div>
+<span class="text-tertiary text-[10px] font-label">30 SEC AGO</span>
+</section>
+<!-- Simulated History: Agent Response 2 (Narrative Bio) -->
+<section class="flex flex-col items-start message-agent space-y-2" id="bio">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<span class="font-label text-xs font-bold uppercase tracking-widest text-tertiary">The Curator</span>
+<span class="text-tertiary text-[10px] font-label">NOW</span>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl rounded-tl-none max-w-2xl">
+<h2 class="font-headline text-xl font-bold mb-6">The Narrative</h2>
+<div class="space-y-4 font-body text-on-surface-variant leading-relaxed">
+<p>I operate at the friction point where visual elegance meets technical rigor. With a decade of experience across fintech, logistics, and experimental labs, my focus is on building interfaces that don't just solve problems but narrate a story.</p>
+<p>I believe that code is an editorial medium. Every transition, every breakpoint, and every tonal shift is a word in a sentence that defines how a human interacts with a machine.</p>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/10 flex items-center gap-4">
+<img alt="Designer Avatar" class="w-12 h-12 rounded-full grayscale object-cover" data-alt="Professional headshot of a creative director in a black turtleneck against a neutral studio background, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAC9TYTXLwzm3Awx9jc4Nnry-qhBStLzN5TUP6uxiaUXmO4fxkEQrlyMJiRj1FIp1cM-OC5PY6XSh4Eo15ijjfi5Si64bEHVtUjeM0XCMPgnoivLmeEcNWIhj8OfAvegRx69DAr25vH2_0anVkvPh-sGuFF2K7IlhQUvj-BbMsdALKjynr_ZiSs-fVtbGKcOklkGKJK9idJ37gE3gIeBR2NlAzerodiRtoQ_kO__vgDhdH2l0QGr7l8LhtUTKtZpQ_BfBG2qjC"/>
+<div>
+<p class="text-sm font-bold font-headline">Alex Chen</p>
+<p class="text-xs font-label text-tertiary uppercase">Principal Creative Engineer</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Command & Navigation -->
+<div class="fixed bottom-0 left-0 w-full z-40">
+<!-- Choice Chips -->
+<div class="max-w-4xl mx-auto px-6 mb-4 flex gap-3 overflow-x-auto no-scrollbar py-2">
+<button class="whitespace-nowrap bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-label text-sm font-bold hover:bg-primary-fixed-dim transition-all hover:-translate-y-0.5 shadow-sm">
+                What's your stack?
+            </button>
+<button class="whitespace-nowrap bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-label text-sm font-bold hover:bg-primary-fixed-dim transition-all hover:-translate-y-0.5 shadow-sm">
+                Show me your best work
+            </button>
+<button class="whitespace-nowrap bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-label text-sm font-bold hover:bg-primary-fixed-dim transition-all hover:-translate-y-0.5 shadow-sm">
+                How can we collaborate?
+            </button>
+</div>
+<!-- Glassmorphic Command Input -->
+<div class="px-6 pb-10">
+<div class="max-w-4xl mx-auto relative group">
+<div class="absolute inset-0 bg-surface-container-lowest/70 backdrop-blur-2xl rounded-full shadow-[0_12px_40px_rgba(47,51,52,0.06)]"></div>
+<div class="relative flex items-center px-6 py-4">
+<span class="font-label text-primary mr-4 text-lg font-bold opacity-50">&gt;</span>
+<input class="w-full bg-transparent border-none focus:ring-0 font-body text-lg text-on-surface placeholder:text-outline/50" placeholder="Ask the Curator..." type="text"/>
+<button class="ml-4 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-dim text-on-primary shadow-lg transition-transform active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile BottomNavBar -->
+<nav class="md:hidden bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl docked full-width bottom-0 rounded-t-3xl border-t border-slate-200/20 shadow-[0_-12px_40px_rgba(47,51,52,0.06)] flex justify-around items-center px-4 pb-8 pt-4">
+<a class="flex flex-col items-center justify-center bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-full px-6 py-2 transition-all translate-y-[-2px]" href="#projects">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="text-xs font-bold font-label uppercase tracking-widest mt-1">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-6 py-2 hover:text-slate-900 dark:hover:text-slate-100" href="#bio">
+<span class="material-symbols-outlined">person_search</span>
+<span class="text-xs font-bold font-label uppercase tracking-widest mt-1">Bio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-6 py-2 hover:text-slate-900 dark:hover:text-slate-100" href="#contact">
+<span class="material-symbols-outlined">alternate_email</span>
+<span class="text-xs font-bold font-label uppercase tracking-widest mt-1">Contact</span>
+</a>
+</nav>
+</div>
+</body></html>
