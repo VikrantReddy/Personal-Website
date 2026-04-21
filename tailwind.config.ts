@@ -128,6 +128,8 @@ export default {
 			},
 			fontFamily: {
 				'mono': ['JetBrains Mono', 'Consolas', 'monospace'],
+				'body': ['Manrope', 'system-ui', 'sans-serif'],
+				'label': ['Space Grotesk', 'system-ui', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

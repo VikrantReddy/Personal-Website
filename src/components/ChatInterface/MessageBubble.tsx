@@ -18,7 +18,7 @@ export function MessageBubble({ message }: MessageBubbleProps) {
     >
       {isAgent && (
         <div className="flex items-center gap-2 mb-2">
-          <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary flex-shrink-0">
+          <div className="w-6 h-6 rounded-full bg-accent flex items-center justify-center text-white flex-shrink-0">
             <Bot className="w-3 h-3" />
           </div>
           <span className="font-label text-[10px] font-bold uppercase tracking-widest text-outline">
@@ -31,7 +31,7 @@ export function MessageBubble({ message }: MessageBubbleProps) {
       <div
         className={`${
           isAgent
-            ? 'bg-surface-container-low border-l-4 border-primary rounded-lg max-w-[85%]'
+            ? 'bg-surface-container-low border-l-4 border-accent rounded-lg max-w-[85%]'
             : 'bg-surface-container-lowest border border-outline-variant/10 shadow-sm rounded-lg rounded-br-none max-w-[75%]'
         } px-5 py-3 text-sm font-body`}
       >
