@@ -57,7 +57,15 @@ export function useChat() {
 
       try {
         // Stream response from backend
-        for await (const chunk of streamChat(userInput)) {
+        // Convert previous messages to backend format (exclude current user message)
+        const previousMessages = messages
+          .filter((msg) => msg.id !== userMessage.id) // Don't include the message we just added
+          .map((msg) => ({
+            role: msg.sender === 'user' ? 'user' : 'assistant',
+            content: msg.text,
+          }));
+
+        for await (const chunk of streamChat(userInput, previousMessages)) {
           setMessages((prev) =>
             prev.map((msg) =>
               msg.id === agentMessageId
