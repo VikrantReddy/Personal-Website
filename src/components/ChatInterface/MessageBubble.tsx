@@ -30,12 +30,14 @@ export function MessageBubble({ message }: MessageBubbleProps) {
 
       <div
         className={`${
-          isAgent
+          message.error
+            ? 'bg-error-container border border-error rounded-lg max-w-[85%]'
+            : isAgent
             ? 'bg-surface-container-low border-l-4 border-accent rounded-lg max-w-[85%]'
             : 'bg-surface-container-lowest border border-outline-variant/10 shadow-sm rounded-lg rounded-br-none max-w-[75%]'
         } px-5 py-3 text-sm font-body`}
       >
-        <p className={isAgent ? 'text-on-surface leading-relaxed' : 'text-on-surface-variant'} style={{ whiteSpace: 'pre-wrap' }}>
+        <p className={message.error ? 'text-on-error-container leading-relaxed' : isAgent ? 'text-on-surface leading-relaxed' : 'text-on-surface-variant'} style={{ whiteSpace: 'pre-wrap' }}>
           {typeof message.text === 'string' ? message.text : String(message.text)}
         </p>
       </div>
