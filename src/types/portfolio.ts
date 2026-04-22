@@ -49,7 +49,7 @@ export type ChatMessage = {
   sender: 'user' | 'agent';
   text: string;
   timestamp: Date;
-  contentType: 'text'; // Always 'text' now
-  data?: never; // Remove data field since LLM handles all responses
-  error?: boolean; // Add error flag for failed requests
+  contentType: 'text' | 'projects' | 'skills' | 'contact' | 'bio' | 'fallback';
+  data?: any;
+  error?: boolean;
 };
