@@ -91,7 +91,7 @@ export function useChat() {
         setLoading(false);
       }
     },
-    []
+    [messages]
   );
 
   return {
