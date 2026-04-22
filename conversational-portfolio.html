@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CURATOR | Conversational Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Manrope:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f9f9f9;
+            color: #2d3435;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .font-epilogue { font-family: 'Epilogue', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .font-space-grotesk { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .chat-glow {
+            box-shadow: 0 0 40px rgba(95, 94, 94, 0.05);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#5e5f5f",
+                      "on-error-container": "#752121",
+                      "on-tertiary-fixed": "#484a4a",
+                      "on-surface": "#2d3435",
+                      "on-primary-fixed": "#403f3f",
+                      "on-error": "#fff7f6",
+                      "surface-container": "#ebeeef",
+                      "on-secondary-fixed-variant": "#5b5b5b",
+                      "primary-container": "#e5e2e1",
+                      "outline": "#757c7d",
+                      "surface-variant": "#dde4e5",
+                      "surface-dim": "#d4dbdd",
+                      "surface-tint": "#5f5e5e",
+                      "secondary-container": "#e4e2e2",
+                      "on-secondary-container": "#515252",
+                      "on-background": "#2d3435",
+                      "on-tertiary": "#f9f9f9",
+                      "on-tertiary-fixed-variant": "#656667",
+                      "error-dim": "#4e0309",
+                      "on-secondary-fixed": "#3f3f3f",
+                      "secondary-fixed": "#e4e2e2",
+                      "on-tertiary-container": "#5a5c5c",
+                      "tertiary-dim": "#525354",
+                      "inverse-primary": "#ffffff",
+                      "secondary": "#5f5f5f",
+                      "surface-bright": "#f9f9f9",
+                      "tertiary-fixed-dim": "#e5e5e5",
+                      "error": "#9f403d",
+                      "on-primary-container": "#525151",
+                      "surface-container-high": "#e4e9ea",
+                      "surface": "#f9f9f9",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-dim": "#535353",
+                      "primary-dim": "#535252",
+                      "surface-container-low": "#f2f4f4",
+                      "surface-container-highest": "#dde4e5",
+                      "on-primary": "#faf7f6",
+                      "on-secondary": "#faf8f8",
+                      "tertiary-fixed": "#f4f3f3",
+                      "error-container": "#fe8983",
+                      "on-surface-variant": "#5a6061",
+                      "inverse-on-surface": "#9c9d9d",
+                      "background": "#f9f9f9",
+                      "outline-variant": "#adb3b4",
+                      "secondary-fixed-dim": "#d5d4d4",
+                      "on-primary-fixed-variant": "#5c5b5b",
+                      "primary-fixed-dim": "#d6d4d3",
+                      "primary": "#5f5e5e",
+                      "primary-fixed": "#e5e2e1",
+                      "inverse-surface": "#0c0f0f",
+                      "tertiary-container": "#f4f3f3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Epilogue"],
+                      "body": ["Manrope"],
+                      "label": ["Space Grotesk"]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface selection:bg-surface-variant">
+<!-- TopAppBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(45,52,53,0.04)]">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-6">
+<div class="text-xl font-extrabold font-headline text-stone-900 dark:text-stone-100 tracking-tighter">CURATOR</div>
+<div class="hidden md:flex gap-10">
+<a class="font-headline font-bold tracking-tighter text-stone-900 dark:text-stone-50 border-b-2 border-stone-900 dark:border-stone-50 pb-1" href="#home">Home</a>
+<a class="font-headline font-bold tracking-tighter text-stone-400 dark:text-stone-500 hover:text-stone-600 transition-colors" href="#projects">Projects</a>
+<a class="font-headline font-bold tracking-tighter text-stone-400 dark:text-stone-500 hover:text-stone-600 transition-colors" href="#about">About</a>
+<a class="font-headline font-bold tracking-tighter text-stone-400 dark:text-stone-500 hover:text-stone-600 transition-colors" href="#contact">Contact</a>
+</div>
+<button class="md:hidden text-stone-600 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-64 max-w-4xl mx-auto px-6 lg:px-0">
+<!-- SECTION 1: INTRO (Home) -->
+<section class="mb-24" id="home">
+<div class="flex flex-col gap-12">
+<!-- AI Narrative Turn -->
+<div class="max-w-2xl">
+<span class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-4 block">System Greeting</span>
+<h1 class="font-headline text-5xl md:text-7xl font-black text-on-surface tracking-tighter leading-tight mb-8">
+                        Good evening. I am the Curator of your digital narrative.
+                    </h1>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-primary">
+<p class="font-body text-lg md:text-xl text-on-surface leading-relaxed">
+                            Every exchange here is intentional. We don't just build interfaces; we architect conversations. My methodology bridges the gap between raw data and emotional resonance.
+                        </p>
+</div>
+</div>
+<!-- User Turn -->
+<div class="flex justify-end">
+<div class="bg-surface-container-lowest shadow-sm p-6 rounded-xl rounded-br-sm max-w-md border border-outline-variant/10">
+<p class="font-body text-on-surface-variant">Show me the evidence of this philosophy.</p>
+<span class="font-label text-[10px] text-outline mt-3 block text-right">SENT_AT: 19:42:01</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-1 bg-surface-dim/20 w-32 mx-auto mb-24 rounded-full"></div>
+<!-- SECTION 2: PROJECTS -->
+<section class="mb-24" id="projects">
+<div class="flex flex-col gap-12">
+<div class="max-w-3xl">
+<span class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-4 block">Archive Selection</span>
+<h2 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-6">Featured Projects</h2>
+<p class="font-body text-lg text-on-surface-variant mb-12">Selected artifacts where utility meets aesthetic authority.</p>
+</div>
+<!-- Bento Grid for Projects -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Project Card 1 -->
+<div class="group bg-surface-container-high rounded-full overflow-hidden flex flex-col hover:scale-[0.98] transition-all duration-500">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Retro electronics" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="High-end studio photograph of minimalist vintage synthesizers and brushed aluminum tech equipment in soft cool lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-A5xAirTWz_Ofj-oOnf0wUE0VqhY0itTB48vow_Dzcq82rCfmNdbA-xWYh4L4-csiQA3tv81jsd1VtjkY-NUNTh1eaoYCjxYiuN_l9b4YWO6Y2c926_fJMf8fJ9JrMaUTr9z5bpakqB0tFbmJ8JNJ755FK1p2szUTn6N0RVU-57qbhILznIhFK4GQ02H6wMccc_x8DSY6-S_it9WZgZMo82VuV-csUtdvaCeN4FqT5_EljMPADEn1z1wCpopAq7HDVV-WJFPs"/>
+</div>
+<div class="p-8 flex flex-col justify-between flex-grow">
+<div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">NEURAL_VOID</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">A spatial exploration of decentralized intelligence through minimal geometry.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container font-label text-[10px] px-3 py-1 rounded-full uppercase">WebGL</span>
+<span class="bg-secondary-container text-on-secondary-container font-label text-[10px] px-3 py-1 rounded-full uppercase">React</span>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group bg-surface-container-high rounded-full overflow-hidden flex flex-col hover:scale-[0.98] transition-all duration-500">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Network hub" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract visualization of glowing digital networks and light particles against a deep indigo background representing connectivity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcL92KPVk7hc8jJ4g7Bwwn_0Ulggz5vqTOPB7xB0GmSPFpTam83-gLG8ahJylGIU56vX3IN3Vfbu52cH9XHvekQ6XAMfXLjb-_SMxW8mXt9Wa_fe3Scrvj79Cv_0YEDPlLserIbs2Nm5AxH4z-20256TF0jFtwASS3bnvS73IxCLt0GuTi-o_4YIz1Bf9C--VLv2dnuspnZm5z-4Qe99DSXcrixVZ27Ywblqcp92dWAioKmr93_XyzhzYFfPmWfterqtjnKAjQ"/>
+</div>
+<div class="p-8 flex flex-col justify-between flex-grow">
+<div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">AXON_INTERFACE</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">Next-generation command systems for autonomous fleet management.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container font-label text-[10px] px-3 py-1 rounded-full uppercase">System Design</span>
+<span class="bg-secondary-container text-on-secondary-container font-label text-[10px] px-3 py-1 rounded-full uppercase">Rust</span>
+</div>
+</div>
+</div>
+</div>
+<!-- User Turn -->
+<div class="flex justify-end mt-8">
+<div class="bg-surface-container-lowest shadow-sm p-6 rounded-xl rounded-br-sm max-w-md border border-outline-variant/10">
+<p class="font-body text-on-surface-variant">Impressive. But what drives the mind behind these artifacts?</p>
+<span class="font-label text-[10px] text-outline mt-3 block text-right">SENT_AT: 19:44:12</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-1 bg-surface-dim/20 w-32 mx-auto mb-24 rounded-full"></div>
+<!-- SECTION 3: ABOUT -->
+<section class="mb-24" id="about">
+<div class="flex flex-col gap-12">
+<div class="max-w-2xl">
+<span class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-4 block">Core Narrative</span>
+<h2 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-8">The Methodology</h2>
+<div class="space-y-6">
+<p class="font-body text-lg text-on-surface leading-relaxed">
+                            I operate at the intersection of **editorial design** and **computational logic**. My background isn't just in pixels; it's in the way humans perceive information as a story.
+                        </p>
+<p class="font-body text-lg text-on-surface leading-relaxed">
+                            I believe that the most powerful interfaces are invisible. They don't demand attention—they facilitate flow. This is the art of the curator: knowing what to exclude.
+                        </p>
+</div>
+<div class="mt-12">
+<span class="font-label text-[10px] tracking-[0.1em] text-outline uppercase mb-4 block">Specialized Expertise</span>
+<div class="flex flex-wrap gap-3">
+<span class="px-5 py-2 border border-outline-variant/30 font-space-grotesk text-sm rounded-full bg-surface-container-low text-on-surface">Creative Direction</span>
+<span class="px-5 py-2 border border-outline-variant/30 font-space-grotesk text-sm rounded-full bg-surface-container-low text-on-surface">Typography Systems</span>
+<span class="px-5 py-2 border border-outline-variant/30 font-space-grotesk text-sm rounded-full bg-surface-container-low text-on-surface">Full-Stack Synthesis</span>
+<span class="px-5 py-2 border border-outline-variant/30 font-space-grotesk text-sm rounded-full bg-surface-container-low text-on-surface">Experience Design</span>
+</div>
+</div>
+</div>
+<!-- User Turn -->
+<div class="flex justify-end">
+<div class="bg-surface-container-lowest shadow-sm p-6 rounded-xl rounded-br-sm max-w-md border border-outline-variant/10">
+<p class="font-body text-on-surface-variant">I’m ready to collaborate. How do we initiate the next phase?</p>
+<span class="font-label text-[10px] text-outline mt-3 block text-right">SENT_AT: 19:48:45</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-1 bg-surface-dim/20 w-32 mx-auto mb-24 rounded-full"></div>
+<!-- SECTION 4: CONTACT -->
+<section class="mb-32" id="contact">
+<div class="flex flex-col gap-12">
+<div class="max-w-3xl">
+<span class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-4 block">Protocol Initiation</span>
+<h2 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-8">Capture Core Coordinates</h2>
+<p class="font-body text-lg text-on-surface-variant mb-12">Define your objective. I will curate the response.</p>
+<div class="bg-surface-container-low p-1 rounded-xl border border-outline-variant/20 shadow-inner">
+<form class="flex flex-col">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="p-6 border-b md:border-b-0 md:border-r border-outline-variant/10">
+<label class="font-label text-[10px] uppercase text-outline block mb-2">Subject_Identity</label>
+<input class="w-full bg-transparent border-none focus:ring-0 font-body text-on-surface placeholder:text-outline-variant" placeholder="Your Name" type="text"/>
+</div>
+<div class="p-6">
+<label class="font-label text-[10px] uppercase text-outline block mb-2">Communication_Channel</label>
+<input class="w-full bg-transparent border-none focus:ring-0 font-body text-on-surface placeholder:text-outline-variant" placeholder="email@nexus.com" type="email"/>
+</div>
+</div>
+<div class="p-6 border-t border-outline-variant/10">
+<label class="font-label text-[10px] uppercase text-outline block mb-2">Message_Payload</label>
+<textarea class="w-full bg-transparent border-none focus:ring-0 font-body text-on-surface placeholder:text-outline-variant resize-none" placeholder="Briefly outline your vision..." rows="4"></textarea>
+</div>
+<div class="p-4 flex justify-end bg-surface-container-highest/50 rounded-b-xl">
+<button class="bg-primary text-on-primary font-headline font-bold py-3 px-10 rounded-xl hover:opacity-90 transition-opacity flex items-center gap-2" type="submit">
+                                    INITIALIZE <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- STICKY INTERACTIVE CHAT BAR -->
+<div class="fixed bottom-0 left-0 right-0 z-40 px-6 pb-8 md:pb-12 pointer-events-none">
+<div class="max-w-4xl mx-auto pointer-events-auto">
+<!-- Suggested Questions Section -->
+<div class="mb-4 flex flex-wrap gap-2 items-center">
+<span class="font-label text-[9px] uppercase tracking-widest text-outline bg-surface-container/50 px-2 py-1 rounded mb-1 w-full md:w-auto">Suggestions:</span>
+<button class="px-4 py-2 bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/20 rounded-full font-label text-xs text-on-surface-variant hover:bg-primary hover:text-on-primary hover:border-primary transition-all duration-300 shadow-sm">
+            What is your tech stack?
+        </button>
+<button class="px-4 py-2 bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/20 rounded-full font-label text-xs text-on-surface-variant hover:bg-primary hover:text-on-primary hover:border-primary transition-all duration-300 shadow-sm">
+            Tell me about your AI philosophy
+        </button>
+<button class="px-4 py-2 bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/20 rounded-full font-label text-xs text-on-surface-variant hover:bg-primary hover:text-on-primary hover:border-primary transition-all duration-300 shadow-sm">
+            Are you available for freelance projects?
+        </button>
+<button class="px-4 py-2 bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/20 rounded-full font-label text-xs text-on-surface-variant hover:bg-primary hover:text-on-primary hover:border-primary transition-all duration-300 shadow-sm">
+            Show me more projects
+        </button>
+</div>
+<!-- Main Input Bar -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl border border-outline-variant/20 p-2 rounded-2xl shadow-2xl chat-glow flex items-center gap-4">
+<div class="pl-4 py-2 border-r border-outline-variant/10 pr-4 hidden md:block">
+<span class="font-label text-[10px] text-outline tracking-widest uppercase block mb-0.5">Prompt_State</span>
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+<span class="font-label font-bold text-xs text-on-surface uppercase">Ready</span>
+</div>
+</div>
+<input class="flex-grow bg-transparent border-none focus:ring-0 font-body text-on-surface placeholder:text-outline-variant" placeholder="Ask me about my work, process, or availability..." type="text"/>
+<button class="bg-primary text-on-primary h-12 w-12 rounded-xl flex items-center justify-center hover:scale-95 transition-transform shrink-0">
+<span class="material-symbols-outlined" data-icon="north_east">north_east</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BottomNavBar for Mobile -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/90 dark:bg-stone-900/90 backdrop-blur-lg border-t border-stone-200/20 dark:border-stone-800/20 shadow-[0_-4px_24px_rgba(0,0,0,0.04)]">
+<div class="flex justify-around items-center px-6 pb-8 pt-4">
+<a class="flex flex-col items-center justify-center bg-stone-100 dark:bg-stone-800 text-stone-900 dark:text-stone-50 rounded-2xl p-3 active:scale-95 transition-all" href="#home">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 p-3 hover:bg-stone-50 transition-colors" href="#projects">
+<span class="material-symbols-outlined" data-icon="folder_special">folder_special</span>
+<span class="font-label text-[10px] uppercase tracking-widest mt-1">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 p-3 hover:bg-stone-50 transition-colors" href="#about">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-[10px] uppercase tracking-widest mt-1">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 p-3 hover:bg-stone-50 transition-colors" href="#contact">
+<span class="material-symbols-outlined" data-icon="alternate_email">alternate_email</span>
+<span class="font-label text-[10px] uppercase tracking-widest mt-1">Contact</span>
+</a>
+</div>
+</nav>
+<!-- Footer Component -->
+<footer class="w-full mt-auto bg-stone-50 dark:bg-stone-950 border-t border-stone-200/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-12 px-8 gap-6">
+<div class="text-stone-800 font-bold font-headline">CURATOR</div>
+<div class="text-stone-400 dark:text-stone-600 font-label text-xs tracking-widest text-center md:text-left">
+                © 2024 THE CONVERSATIONAL CURATOR
+            </div>
+<div class="flex gap-8">
+<a class="text-stone-400 font-label text-xs tracking-widest hover:text-stone-800 transition-colors" href="#">Archive</a>
+<a class="text-stone-400 font-label text-xs tracking-widest hover:text-stone-800 transition-colors" href="#">Privacy</a>
+<a class="text-stone-400 font-label text-xs tracking-widest hover:text-stone-800 transition-colors" href="#">Methodology</a>
+</div>
+</div>
+</footer>
+</body></html>
