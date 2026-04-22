@@ -44,11 +44,12 @@ export interface PortfolioData {
   contact: Contact;
 }
 
-export interface ChatMessage {
+export type ChatMessage = {
   id: string;
   sender: 'user' | 'agent';
   text: string;
   timestamp: Date;
-  contentType: 'text' | 'projects' | 'skills' | 'contact' | 'bio' | 'fallback';
-  data?: any;
-}
+  contentType: 'text'; // Always 'text' now
+  data?: never; // Remove data field since LLM handles all responses
+  error?: boolean; // Add error flag for failed requests
+};
