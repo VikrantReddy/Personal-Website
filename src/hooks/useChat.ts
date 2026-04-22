@@ -1,7 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { ChatMessage } from '@/types/portfolio';
-import { routeQuery } from '@/utils/queryRouter';
-import { portfolioData } from '@/utils/portfolioData';
+import { streamChat } from '@/utils/backendClient';
 
 export function useChat() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -43,74 +42,46 @@ export function useChat() {
       setMessages((prev) => [...prev, userMessage]);
       setLoading(true);
 
-      // Simulate delay for natural feel
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      // Route the query
-      const route = routeQuery(userInput);
-
-      let agentMessage: ChatMessage;
-
-      switch (route.contentType) {
-        case 'projects':
-          agentMessage = {
-            id: Date.now().toString(),
-            sender: 'agent',
-            text: 'Accessing the repository... I\'ve retrieved our latest high-impact projects that define our current trajectory.',
-            timestamp: new Date(),
-            contentType: 'projects',
-            data: portfolioData.projects
-          };
-          break;
-
-        case 'skills':
-          agentMessage = {
-            id: Date.now().toString(),
-            sender: 'agent',
-            text: 'Here\'s an overview of my technical skills and expertise, crafted through years of solving real-world challenges.',
-            timestamp: new Date(),
-            contentType: 'skills',
-            data: portfolioData.skills
-          };
-          break;
-
-        case 'contact':
-          agentMessage = {
-            id: Date.now().toString(),
-            sender: 'agent',
-            text: 'I\'m available to discuss your project and help bring your ideas to reality. Here\'s how we can work together:',
-            timestamp: new Date(),
-            contentType: 'contact',
-            data: portfolioData.contact
-          };
-          break;
-
-        case 'bio':
-          agentMessage = {
-            id: Date.now().toString(),
-            sender: 'agent',
-            text: `I'm ${portfolioData.bio.name}, a ${portfolioData.bio.title}. ${portfolioData.bio.tagline}`,
-            timestamp: new Date(),
-            contentType: 'bio',
-            data: portfolioData.bio
-          };
-          break;
-
-        case 'fallback':
-        default:
-          agentMessage = {
-            id: Date.now().toString(),
-            sender: 'agent',
-            text: 'I didn\'t quite catch that. Try asking about my projects, skills, background, or how to work with me.',
-            timestamp: new Date(),
-            contentType: 'fallback',
-            data: { suggestedPrompts: route.suggestedPrompts }
-          };
-          break;
-      }
+      // Create empty agent message that will be filled as stream arrives
+      const agentMessageId = (Date.now() + 1).toString();
+      const agentMessage: ChatMessage = {
+        id: agentMessageId,
+        sender: 'agent',
+        text: '',
+        timestamp: new Date(),
+        contentType: 'text',
+        error: false
+      };
 
       setMessages((prev) => [...prev, agentMessage]);
-      setLoading(false);
+
+      try {
+        // Stream response from backend
+        for await (const chunk of streamChat(userInput)) {
+          setMessages((prev) =>
+            prev.map((msg) =>
+              msg.id === agentMessageId
+                ? { ...msg, text: msg.text + chunk }
+                : msg
+            )
+          );
+        }
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : 'An error occurred';
+        setMessages((prev) =>
+          prev.map((msg) =>
+            msg.id === agentMessageId
+              ? {
+                  ...msg,
+                  text: `Sorry, I encountered an issue: ${errorMessage}. Please try again.`,
+                  error: true
+                }
+              : msg
+          )
+        );
+      } finally {
+        setLoading(false);
+      }
     },
     []
   );
