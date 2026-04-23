@@ -63,6 +63,8 @@ export async function* streamChat(
             const data = JSON.parse(line.slice(6));
             if (data.type === 'chunk' && data.text) {
               yield data.text;
+            } else if (data.type === 'message' && data.text) {
+              yield data.text;
             } else if (data.type === 'done') {
               return;
             } else if (data.type === 'error') {
