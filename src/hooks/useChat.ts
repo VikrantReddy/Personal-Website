@@ -66,16 +66,17 @@ export function useChat() {
           }));
 
         for await (const chunk of streamChat(userInput, previousMessages)) {
-          // Add small delay for typing effect
-          await new Promise(resolve => setTimeout(resolve, 15));
-
-          setMessages((prev) =>
-            prev.map((msg) =>
-              msg.id === agentMessageId
-                ? { ...msg, text: msg.text + chunk }
-                : msg
-            )
-          );
+          // Character-by-character typing effect
+          for (const char of chunk) {
+            await new Promise(resolve => setTimeout(resolve, 15));
+            setMessages((prev) =>
+              prev.map((msg) =>
+                msg.id === agentMessageId
+                  ? { ...msg, text: msg.text + char }
+                  : msg
+              )
+            );
+          }
         }
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'An error occurred';
