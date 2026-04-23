@@ -66,6 +66,9 @@ export function useChat() {
           }));
 
         for await (const chunk of streamChat(userInput, previousMessages)) {
+          // Add small delay for typing effect
+          await new Promise(resolve => setTimeout(resolve, 15));
+
           setMessages((prev) =>
             prev.map((msg) =>
               msg.id === agentMessageId
