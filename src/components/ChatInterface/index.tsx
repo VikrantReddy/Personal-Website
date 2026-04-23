@@ -22,8 +22,7 @@ export function ChatInterface() {
     [sendMessage]
   );
 
-  const showInitialPrompts =
-    messages.length === 1 && messages[0].sender === 'agent';
+  const showInitialPrompts = messages.length > 0 && messages[0].sender === 'agent';
 
   return (
     <div className="flex flex-col h-screen bg-surface">
