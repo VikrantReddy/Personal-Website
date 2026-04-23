@@ -38,20 +38,40 @@ export async function* streamChat(
       throw new Error(`Backend error: ${response.status} ${response.statusText}`);
     }
 
-    // Parse JSON response (not streaming)
-    const data = await response.json();
-
-    if (!data.message || !data.message.content) {
-      throw new Error('Invalid response format from backend');
+    // Consume SSE stream
+    const reader = response.body?.getReader();
+    if (!reader) {
+      throw new Error('Response body is not readable');
     }
 
-    // Yield the response word-by-word for UI streaming effect
-    const responseText = data.message.content;
-    const words = responseText.split(' ');
+    const decoder = new TextDecoder();
+    let buffer = '';
 
-    for (const word of words) {
-      if (word.trim()) {
-        yield word + ' ';
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+
+      // Keep the last incomplete line in the buffer
+      buffer = lines.pop() || '';
+
+      for (const line of lines) {
+        if (line.startsWith('data: ')) {
+          try {
+            const data = JSON.parse(line.slice(6));
+            if (data.type === 'chunk' && data.text) {
+              yield data.text;
+            } else if (data.type === 'done') {
+              return;
+            } else if (data.type === 'error') {
+              throw new Error(data.error);
+            }
+          } catch (e) {
+            // Ignore parse errors for keep-alive lines
+          }
+        }
       }
     }
   } catch (error) {
