@@ -13,7 +13,7 @@ export function useChat() {
       const welcomeMessage: ChatMessage = {
         id: '0',
         sender: 'agent',
-        text: `Welcome to the Portfolio OS.\n\nI am your Curator. This space is a living archive of work, thoughts, and technical logic. Instead of browsing a static grid, tell me what you're looking for, or choose a prompt below to begin the exploration.`,
+        text: `Welcome to the Portfolio OS.\n\nI am Gravity OS. This space is a living archive of work, thoughts, and technical logic. Instead of browsing a static grid, tell me what you're looking for, or choose a prompt below to begin the exploration.`,
         timestamp: new Date(),
         contentType: 'text'
       };

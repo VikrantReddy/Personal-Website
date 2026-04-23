@@ -31,7 +31,7 @@ export function ChatInterface() {
       <header className="sticky top-0 z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl flex justify-between items-center px-6 lg:px-0 py-6 border-b border-outline-variant/20">
         <div className="max-w-2xl w-full mx-auto flex items-center gap-4 lg:px-6">
           <span className="text-2xl md:text-3xl font-headline font-black tracking-tighter text-on-surface">
-            CURATOR
+            Vikrant Reddy
           </span>
         </div>
       </header>
