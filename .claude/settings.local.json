@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__stitch__get_project",
+      "Bash(git add *)",
+      "Bash(git commit -m 'docs: add dialogue portfolio design specification *)",
+      "Bash(docker exec personal-website-be-ollama-1 *)"
+    ]
+  }
+}
