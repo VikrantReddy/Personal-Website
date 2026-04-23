@@ -1,4 +1,4 @@
-const BACKEND_URL = 'https://9472-2401-4900-1f25-4e70-b9a5-a7be-7e60-323c.ngrok-free.app';
+const BACKEND_URL = 'https://a316-2401-4900-1f25-4e70-b9a5-a7be-7e60-323c.ngrok-free.app';
 const MODEL = 'neural-chat';
 const MAX_TOKENS = 512;
 
