@@ -37,9 +37,17 @@ export function MessageBubble({ message }: MessageBubbleProps) {
             : 'bg-surface-container-lowest border border-outline-variant/10 shadow-sm rounded-lg rounded-br-none max-w-[75%]'
         } px-5 py-3 text-sm font-body`}
       >
-        <p className={message.error ? 'text-on-error-container leading-relaxed' : isAgent ? 'text-on-surface leading-relaxed' : 'text-on-surface-variant'} style={{ whiteSpace: 'pre-wrap' }}>
-          {typeof message.text === 'string' ? message.text : String(message.text)}
-        </p>
+        {!message.text && isAgent ? (
+          <div className="flex gap-1 pt-1">
+            <div className="w-2 h-2 bg-on-surface/60 rounded-full animate-bounce" style={{ animationDelay: '0s' }} />
+            <div className="w-2 h-2 bg-on-surface/60 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+            <div className="w-2 h-2 bg-on-surface/60 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }} />
+          </div>
+        ) : (
+          <p className={message.error ? 'text-on-error-container leading-relaxed' : isAgent ? 'text-on-surface leading-relaxed' : 'text-on-surface-variant'} style={{ whiteSpace: 'pre-wrap' }}>
+            {typeof message.text === 'string' ? message.text : String(message.text)}
+          </p>
+        )}
       </div>
 
       {!isAgent && (
