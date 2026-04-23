@@ -22,7 +22,7 @@ export function MessageBubble({ message }: MessageBubbleProps) {
             <Bot className="w-3 h-3" />
           </div>
           <span className="font-label text-[10px] font-bold uppercase tracking-widest text-outline">
-            The Curator
+            Vikrant Reddy
           </span>
           <span className="font-label text-[10px] text-outline ml-auto">{timeString}</span>
         </div>
