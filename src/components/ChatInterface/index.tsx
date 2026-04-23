@@ -62,6 +62,17 @@ export function ChatInterface() {
             </div>
           )}
 
+          {loading && (
+            <div className="flex items-start gap-3 mt-4">
+              <div className="text-lg text-on-surface/40 font-body">Curator</div>
+              <div className="flex gap-1 pt-1">
+                <div className="w-2 h-2 bg-on-surface/40 rounded-full animate-bounce" style={{ animationDelay: '0s' }} />
+                <div className="w-2 h-2 bg-on-surface/40 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+                <div className="w-2 h-2 bg-on-surface/40 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }} />
+              </div>
+            </div>
+          )}
+
           <div ref={messagesEndRef} />
         </div>
       </main>
