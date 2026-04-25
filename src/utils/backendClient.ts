@@ -1,5 +1,5 @@
-const BACKEND_URL = 'https://a316-2401-4900-1f25-4e70-b9a5-a7be-7e60-323c.ngrok-free.app';
-const MODEL = 'neural-chat';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+const MODEL = 'llama';
 const MAX_TOKENS = 512;
 
 // Generate session ID (persists for the session)
